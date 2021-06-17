@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tarefaatividade2unid5;
+package AtividadeUnid6;
 
 import java.awt.Font;
 import java.awt.TextField;
@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
  *
  * @author AdrianoBenelliBastos
  */
-public class TarefaAtividade2Unid5 {
+public class AtividadeUnid6 {
 
     /**
      * @param args the command line arguments
