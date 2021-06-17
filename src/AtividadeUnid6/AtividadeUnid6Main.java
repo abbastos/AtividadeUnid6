@@ -5,9 +5,13 @@
  */
 package AtividadeUnid6;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 
 /**
@@ -24,9 +28,8 @@ public class AtividadeUnid6Main {
         JFrame janelaPrincipal = new JFrame("RadioButtons");
         janelaPrincipal.setDefaultCloseOperation(3);
         janelaPrincipal.setLayout(null);
-        janelaPrincipal.setLocationRelativeTo(null);
         janelaPrincipal.setVisible(true);
-        janelaPrincipal.setSize(400, 200);
+        janelaPrincipal.setBounds(750, 300, 400, 200);
 
         JLabel lblNotificacao = new JLabel("Você está na aula de programação:");
         lblNotificacao.setBounds(10, 20, 250, 20);
@@ -39,19 +42,37 @@ public class AtividadeUnid6Main {
         JLabel lblOtherLanguage = new JLabel("Outra Linguagem");
         lblOtherLanguage.setBounds(150, 50, 100, 20);
         janelaPrincipal.add(lblOtherLanguage);
-        
+
         JRadioButton rdbJavaSwing = new JRadioButton();
-        rdbJavaSwing.setBounds(10, 50, 20 ,20);
+        rdbJavaSwing.setBounds(10, 50, 20, 20);
         janelaPrincipal.add(rdbJavaSwing);
-        
+
         JRadioButton rdbOtherLanguage = new JRadioButton();
-        rdbOtherLanguage.setBounds(125, 50, 20 ,20);
+        rdbOtherLanguage.setBounds(125, 50, 20, 20);
         janelaPrincipal.add(rdbOtherLanguage);
-        
+
         JButton btnClick = new JButton("Click");
         btnClick.setBounds(150, 110, 100, 30);
         janelaPrincipal.add(btnClick);
-        
+
+        ButtonGroup grupoRdb = new ButtonGroup();
+        grupoRdb.add(rdbJavaSwing);
+        grupoRdb.add(rdbOtherLanguage);
+
+        btnClick.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                if (rdbJavaSwing.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "Java Swing");
+                } else if (rdbOtherLanguage.isSelected()) {
+                    JOptionPane.showMessageDialog(null, "Outra Linguagem...Tem certeza?");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Você não selecionou nada");
+                }
+
+            }
+        });
 
     }
 
